@@ -1,0 +1,13 @@
+# Copyright 2022 Manna Harbour
+# https://github.com/manna-harbour/miryoku
+
+name: 'Build corne v3.1, nice_nano_v2 '
+on: workflow_dispatch
+jobs:
+  build:
+    uses: ./.github/workflows/main.yml
+    secrets: inherit
+    with:
+      board: '["nice_nano_v2"]'
+      shield: '["corne_left","corne_right"]'
+      kconfig: '["CONFIG_ZMK_DISPLAY=y","CONFIG_BT_CTLR_TX_PWR_PLUS_8=y"]'
