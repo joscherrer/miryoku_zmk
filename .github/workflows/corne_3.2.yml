@@ -15,4 +15,4 @@ jobs:
       extra: '["qwerty_corne"]'
       tap: '["qwerty_corne"]'
       nav: '["vi_corne"]'
-      clipboard: '["vi"]'
+      clipboard: '["vi_corne"]'
