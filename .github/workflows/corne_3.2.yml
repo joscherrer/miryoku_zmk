@@ -10,7 +10,7 @@ jobs:
     with:
       board: '["nice_nano_v2"]'
       shield: '["corne_left","corne_right"]'
-      kconfig: '["CONFIG_ZMK_DISPLAY=y","CONFIG_BT_CTLR_TX_PWR_PLUS_8=y"]'
+      kconfig: '["CONFIG_ZMK_DISPLAY=y\nCONFIG_BT_CTLR_TX_PWR_PLUS_8=y"]'
       alphas: '["qwerty"]'
       extra: '["qwerty"]'
       tap: '["qwerty"]'
