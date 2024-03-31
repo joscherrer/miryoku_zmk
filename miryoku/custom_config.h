@@ -40,7 +40,7 @@ U_NP,              U_NP,              U_NP,              U_LT(U_MEDIA, ESC),U_LT
 &kp TAB,           &kp Q,             &kp W,             &kp E,             &kp R,             &kp T,             &kp Y,             &kp U,             &kp I,             &kp O,             &kp P,             &u_to_U_BASE,    \
 &kp LCTRL,         &kp A,             &kp S,             &kp D,             &kp F,             &kp G,             &kp H,             &kp J,             &kp K,             &kp L,             &kp SQT,           U_NU,            \
 &kp LSHFT,         &kp Z,             &kp X,             &kp C,             &kp V,             &kp B,             &kp N,             &kp M,             &kp COMMA,         &kp DOT,           &kp SLASH,         U_NU,            \
-U_NP,              U_NP,              U_NP,              &kp ESC,           &kp SPACE,         &kp TAB,           &kp RET,           &kp BSPC,          &kp DEL,           U_NP,              U_NP,              U_NP
+U_NP,              U_NP,              U_NP,              &kp ESC,           &kp SPACE,         &mo U_NUM,         &kp RET,           &kp BSPC,          &kp DEL,           U_NP,              U_NP,              U_NP
 
 #define MIRYOKU_ALTERNATIVES_NAV_VI_CORNE \
 U_NU,              U_BOOT,            &u_to_U_TAP,       &u_to_U_EXTRA,     &u_to_U_BASE,      U_NA,              U_RDO,             U_PST,             U_CPY,             U_CUT,             U_UND,             U_NU,     \
