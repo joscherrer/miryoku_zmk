@@ -5,8 +5,6 @@ name: 'Build corne v3.1, nice_nano_v2 '
 on: workflow_dispatch
 jobs:
   build:
-    container:
-      image: zmkfirmware/zmk-build-arm:stable
     uses: ./.github/workflows/main.yml
     secrets: inherit
     with:
