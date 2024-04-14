@@ -101,7 +101,6 @@ jobs:
           echo "MIRYOKU_KEYBOARD_$keyboard_base" | tr '[a-z-]' '[A-Z_]' >> "$tmpfile"
           cat "$configfile" >> "$tmpfile"
           mv "$tmpfile" "$configfile"
-          cat "$configfile"
           artifact_build_name="miryoku_zmk"
           if [ -n "${{ matrix.shield }}" -a "${{ matrix.shield }}" != 'default' ]
           then
@@ -134,6 +133,7 @@ jobs:
           mkdir "$artifact_dir"
 
           test "$MIRYOKU_DEBUG" = 'MIRYOKU_DEBUG_TRUE' && cp "$configfile" "$artifact_dir"
+          cat "$configfile"
 
           if [ -n "${{ matrix.kconfig }}" -a "${{ matrix.kconfig }}" != 'default' ]
           then
