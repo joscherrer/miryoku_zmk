@@ -1,30 +1,14 @@
 #include <dt-bindings/zmk/keys.h>
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/kscan_mock.h>
+#include "helpers.h"
 
-#define UNICODE(name, lead, L0, L1, L2, L3) \
-    ZMK_MACRO(name, \
-        wait-ms = <20>; \
-        tap-ms = <20>; \
-        bindings = \
-            <&macro_press &kp lead>, \
-            <&macro_tap &kp KP_N0 &kp KP_N2 &kp KP_N3 &kp KP_N3>, \
-            <&macro_release &kp lead>; \
-    )
-
-#define UNICODE_OS_LIST(os, lead) \
-    /* è */ UNICODE(uc_##os##_eg, lead, KP_N0, KP_N2, KP_N3, KP_N2) \
-    /* à */ UNICODE(uc_##os##_ag, lead, KP_N0, KP_N2, KP_N2, KP_N4) \
-    /* ù */ UNICODE(uc_##os##_ug, lead, KP_N0, KP_N2, KP_N4, KP_N9) \
-    /* é */ UNICODE(uc_##os##_ea, lead, KP_N0, KP_N2, KP_N3, KP_N3) \
-    /* ç */ UNICODE(uc_##os##_cc, lead, KP_N0, KP_N2, KP_N3, KP_N1) \
-    /* ê */ UNICODE(uc_##os##_ec, lead, KP_N0, KP_N2, KP_N3, KP_N4) \
-    /* â */ UNICODE(uc_##os##_ac, lead, KP_N0, KP_N2, KP_N2, KP_N6) \
-    /* û */ UNICODE(uc_##os##_uc, lead, KP_N0, KP_N2, KP_N5, KP_N1) \
-    /* ô */ UNICODE(uc_##os##_oc, lead, KP_N0, KP_N2, KP_N4, KP_N4)
-
-/ {
-    macros {
-        UNICODE_OS_LIST(win, RALT)
-    };
-};
+ZMK_UNICODE_PAIR(uc_win_eg, KP_N0, KP_N2, KP_N3, KP_N2, KP_N0, KP_N2, KP_N0, KP_N0) /* è */
+ZMK_UNICODE_PAIR(uc_win_ag, KP_N0, KP_N2, KP_N2, KP_N4, KP_N0, KP_N1, KP_N9, KP_N2) /* à */
+ZMK_UNICODE_PAIR(uc_win_ug, KP_N0, KP_N2, KP_N4, KP_N9, KP_N0, KP_N2, KP_N1, KP_N7) /* ù */
+ZMK_UNICODE_PAIR(uc_win_ea, KP_N0, KP_N2, KP_N3, KP_N3, KP_N0, KP_N2, KP_N0, KP_N1) /* é */
+ZMK_UNICODE_PAIR(uc_win_cc, KP_N0, KP_N2, KP_N3, KP_N1, KP_N0, KP_N1, KP_N9, KP_N9) /* ç */
+ZMK_UNICODE_PAIR(uc_win_ec, KP_N0, KP_N2, KP_N3, KP_N4, KP_N0, KP_N2, KP_N0, KP_N2) /* ê */
+ZMK_UNICODE_PAIR(uc_win_ac, KP_N0, KP_N2, KP_N2, KP_N6, KP_N0, KP_N1, KP_N9, KP_N4) /* â */
+ZMK_UNICODE_PAIR(uc_win_uc, KP_N0, KP_N2, KP_N5, KP_N1, KP_N0, KP_N2, KP_N1, KP_N9) /* û */
+ZMK_UNICODE_PAIR(uc_win_oc, KP_N0, KP_N2, KP_N4, KP_N4, KP_N0, KP_N2, KP_N1, KP_N2) /* ô */
