@@ -3,12 +3,22 @@
 #include <dt-bindings/zmk/kscan_mock.h>
 #include "helpers.h"
 
-ZMK_UNICODE_PAIR(uc_win_eg, KP_N0, KP_N2, KP_N3, KP_N2, KP_N0, KP_N2, KP_N0, KP_N0) /* è */
-ZMK_UNICODE_PAIR(uc_win_ag, KP_N0, KP_N2, KP_N2, KP_N4, KP_N0, KP_N1, KP_N9, KP_N2) /* à */
-ZMK_UNICODE_PAIR(uc_win_ug, KP_N0, KP_N2, KP_N4, KP_N9, KP_N0, KP_N2, KP_N1, KP_N7) /* ù */
-ZMK_UNICODE_PAIR(uc_win_ea, KP_N0, KP_N2, KP_N3, KP_N3, KP_N0, KP_N2, KP_N0, KP_N1) /* é */
-ZMK_UNICODE_PAIR(uc_win_cc, KP_N0, KP_N2, KP_N3, KP_N1, KP_N0, KP_N1, KP_N9, KP_N9) /* ç */
-ZMK_UNICODE_PAIR(uc_win_ec, KP_N0, KP_N2, KP_N3, KP_N4, KP_N0, KP_N2, KP_N0, KP_N2) /* ê */
-ZMK_UNICODE_PAIR(uc_win_ac, KP_N0, KP_N2, KP_N2, KP_N6, KP_N0, KP_N1, KP_N9, KP_N4) /* â */
-ZMK_UNICODE_PAIR(uc_win_uc, KP_N0, KP_N2, KP_N5, KP_N1, KP_N0, KP_N2, KP_N1, KP_N9) /* û */
-ZMK_UNICODE_PAIR(uc_win_oc, KP_N0, KP_N2, KP_N4, KP_N4, KP_N0, KP_N2, KP_N1, KP_N2) /* ô */
+ZMK_UNICODE_PAIR(uc_win_ea, N0, N0, E, N9, N0, N0, C, N9) /* é, É */
+ZMK_UNICODE_PAIR(uc_win_eg, N0, N0, E, N8, N0, N0, C, N8) /* è, È */
+ZMK_UNICODE_PAIR(uc_win_ug, N0, N0, F, N9, N0, N0, D, N9) /* ù, Ù */
+
+ZMK_UNICODE_PAIR(uc_win_cc, N0, N0, E, N7, N0, N0, C, N7) /* ç, Ç */
+ZMK_UNICODE_PAIR(uc_win_ag, N0, N0, E, N0, N0, N0, C, N0) /* à, À */
+ZMK_UNICODE_PAIR(uc_win_ec, N0, N0, E, A, N0, N0, C, A) /* ê, Ê */
+
+
+ZMK_UNICODE_PAIR(uc_win_oc, N0, N0, F, N4, N0, N0, D, N4) /* ô, Ô */
+ZMK_UNICODE_PAIR(uc_win_ac, N0, N0, E, N2, N0, N0, C, N2) /* â, Â */ 
+
+ZMK_UNICODE_PAIR(uc_win_at, N0, N0, E, N4, N0, N0, C, N4) /* ä, Ä */ 
+ZMK_UNICODE_PAIR(uc_win_ic, N0, N0, E, E, N0, N0, C, E) /* î, Î */
+ZMK_UNICODE_PAIR(uc_win_uc, N0, N0, F, B, N0, N0, D, B) /* û, Û */
+ZMK_UNICODE_PAIR(uc_win_it, N0, N0, E, F, N0, N0, C, F) /* ï, Ï */
+ZMK_UNICODE_PAIR(uc_win_ut, N0, N0, F, C, N0, N0, D, C) /* ü, Ü */
+ZMK_UNICODE_PAIR(uc_win_et, N0, N0, E, B, N0, N0, C, B) /* ë, Ë */
+ZMK_UNICODE_PAIR(uc_win_ot, N0, N0, F, N6, N0, N0, D, N6) /* ö, Ö */
