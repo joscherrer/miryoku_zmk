@@ -132,7 +132,7 @@
     #endif
 #endif
 
-#define UC_MACRO(name, unicode_bindings) \
+#define UC_MACRO(name, lead, trail, unicode_bindings) \
     / { \
         macros { \
             name: name { \
@@ -140,7 +140,7 @@
                 wait-ms = <0>; \
                 tap-ms = <0>; \
                 #binding-cells = <0>; \
-                bindings = <OS_UNICODE_LEAD>, <&macro_tap unicode_bindings>, <OS_UNICODE_TRAIL>; \
+                bindings = <lead>, <&macro_tap unicode_bindings>, <trail>; \
             }; \
         }; \
     };
@@ -157,11 +157,16 @@
         }; \
     };
 
-#define ZMK_UNICODE_SINGLE(name, L0, L1, L2, L3) \
-    UC_MACRO(name ## _lower, &kp L0 &kp L1 &kp L2 &kp L3) \
+#define ZMK_UNICODE_SINGLE(name, lead, trail, L0, L1, L2, L3) \
+    UC_MACRO(name ## _lower, lead, trail, &kp L0 &kp L1 &kp L2 &kp L3) \
     UC_MODMORPH(name, &name ## _lower, &none)
 
-#define ZMK_UNICODE_PAIR(name, L0, L1, L2, L3, U0, U1, U2, U3) \
-    UC_MACRO(name ## _lower, &kp L0 &kp L1 &kp L2 &kp L3) \
-    UC_MACRO(name ## _upper, &kp U0 &kp U1 &kp U2 &kp U3) \
+#define ZMK_UNICODE_PAIR(name, lead, trail, L0, L1, L2, L3, U0, U1, U2, U3) \
+    UC_MACRO(name ## _lower, lead, trail, &kp L0 &kp L1 &kp L2 &kp L3) \
+    UC_MACRO(name ## _upper, lead, trail, &kp U0 &kp U1 &kp U2 &kp U3) \
     UC_MODMORPH(name, &name ## _lower, &name ## _upper)
+
+#define ZMK_UNICODE_PAIR_ALL_OS(name, L0, L1, L2, L3, U0, U1, U2, U3) \
+    ZMK_UNICODE_PAIR(name ## _lin, &macro_tap &kp LS(LC(U)),  &macro_tap &kp SPACE,    L0, L1, L2, L3, U0, U1, U2, U3) \
+    ZMK_UNICODE_PAIR(name ## _win, &macro_tap &kp RALT &kp U, &macro_tap &kp RET,      L0, L1, L2, L3, U0, U1, U2, U3) \
+    ZMK_UNICODE_PAIR(name ## _mac, &macro_press &kp LALT,     &macro_release &kp LALT, L0, L1, L2, L3, U0, U1, U2, U3)

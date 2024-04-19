@@ -3,22 +3,22 @@
 #include <dt-bindings/zmk/kscan_mock.h>
 #include "helpers.h"
 
-ZMK_UNICODE_PAIR(uc_win_ea, N0, N0, E, N9, N0, N0, C, N9) /* é, É */
-ZMK_UNICODE_PAIR(uc_win_eg, N0, N0, E, N8, N0, N0, C, N8) /* è, È */
-ZMK_UNICODE_PAIR(uc_win_ug, N0, N0, F, N9, N0, N0, D, N9) /* ù, Ù */
+ZMK_UNICODE_PAIR_ALL_OS(uc_ea, N0, N0, E, N9, N0, N0, C, N9) /* é, É */
+ZMK_UNICODE_PAIR_ALL_OS(uc_eg, N0, N0, E, N8, N0, N0, C, N8) /* è, È */
+ZMK_UNICODE_PAIR_ALL_OS(uc_ug, N0, N0, F, N9, N0, N0, D, N9) /* ù, Ù */
 
-ZMK_UNICODE_PAIR(uc_win_cc, N0, N0, E, N7, N0, N0, C, N7) /* ç, Ç */
-ZMK_UNICODE_PAIR(uc_win_ag, N0, N0, E, N0, N0, N0, C, N0) /* à, À */
-ZMK_UNICODE_PAIR(uc_win_ec, N0, N0, E, A, N0, N0, C, A) /* ê, Ê */
+ZMK_UNICODE_PAIR_ALL_OS(uc_cc, N0, N0, E, N7, N0, N0, C, N7) /* ç, Ç */
+ZMK_UNICODE_PAIR_ALL_OS(uc_ag, N0, N0, E, N0, N0, N0, C, N0) /* à, À */
+ZMK_UNICODE_PAIR_ALL_OS(uc_ec, N0, N0, E, A, N0, N0, C, A)   /* ê, Ê */
 
 
-ZMK_UNICODE_PAIR(uc_win_oc, N0, N0, F, N4, N0, N0, D, N4) /* ô, Ô */
-ZMK_UNICODE_PAIR(uc_win_ac, N0, N0, E, N2, N0, N0, C, N2) /* â, Â */ 
+ZMK_UNICODE_PAIR_ALL_OS(uc_oc, N0, N0, F, N4, N0, N0, D, N4) /* ô, Ô */
+ZMK_UNICODE_PAIR_ALL_OS(uc_ac, N0, N0, E, N2, N0, N0, C, N2) /* â, Â */ 
 
-ZMK_UNICODE_PAIR(uc_win_at, N0, N0, E, N4, N0, N0, C, N4) /* ä, Ä */ 
-ZMK_UNICODE_PAIR(uc_win_ic, N0, N0, E, E, N0, N0, C, E) /* î, Î */
-ZMK_UNICODE_PAIR(uc_win_uc, N0, N0, F, B, N0, N0, D, B) /* û, Û */
-ZMK_UNICODE_PAIR(uc_win_it, N0, N0, E, F, N0, N0, C, F) /* ï, Ï */
-ZMK_UNICODE_PAIR(uc_win_ut, N0, N0, F, C, N0, N0, D, C) /* ü, Ü */
-ZMK_UNICODE_PAIR(uc_win_et, N0, N0, E, B, N0, N0, C, B) /* ë, Ë */
-ZMK_UNICODE_PAIR(uc_win_ot, N0, N0, F, N6, N0, N0, D, N6) /* ö, Ö */
+ZMK_UNICODE_PAIR_ALL_OS(uc_at, N0, N0, E, N4, N0, N0, C, N4) /* ä, Ä */ 
+ZMK_UNICODE_PAIR_ALL_OS(uc_ic, N0, N0, E, E, N0, N0, C, E)   /* î, Î */
+ZMK_UNICODE_PAIR_ALL_OS(uc_uc, N0, N0, F, B, N0, N0, D, B)   /* û, Û */
+ZMK_UNICODE_PAIR_ALL_OS(uc_it, N0, N0, E, F, N0, N0, C, F)   /* ï, Ï */
+ZMK_UNICODE_PAIR_ALL_OS(uc_ut, N0, N0, F, C, N0, N0, D, C)   /* ü, Ü */
+ZMK_UNICODE_PAIR_ALL_OS(uc_et, N0, N0, E, B, N0, N0, C, B)   /* ë, Ë */
+ZMK_UNICODE_PAIR_ALL_OS(uc_ot, N0, N0, F, N6, N0, N0, D, N6) /* ö, Ö */
