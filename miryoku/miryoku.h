@@ -30,7 +30,7 @@
 #endif
 
 #if !defined (HOLD_TAP_FLAVOR)
-  #define HOLD_TAP_FLAVOR "balanced"
+  #define HOLD_TAP_FLAVOR balanced
 #endif
 
 #include "miryoku_clipboard.h"
