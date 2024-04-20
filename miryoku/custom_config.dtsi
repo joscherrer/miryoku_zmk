@@ -22,3 +22,4 @@ ZMK_UNICODE_PAIR_ALL_OS(uc_it, N0, N0, E, F, N0, N0, C, F)   /* ï, Ï */
 ZMK_UNICODE_PAIR_ALL_OS(uc_ut, N0, N0, F, C, N0, N0, D, C)   /* ü, Ü */
 ZMK_UNICODE_PAIR_ALL_OS(uc_et, N0, N0, E, B, N0, N0, C, B)   /* ë, Ë */
 ZMK_UNICODE_PAIR_ALL_OS(uc_ot, N0, N0, F, N6, N0, N0, D, N6) /* ö, Ö */
+

@@ -8,6 +8,7 @@
 
 #define U_MACRO_VA_ARGS(macro, ...) macro(__VA_ARGS__)
 #define U_STRINGIFY(x) #x
+#define xstr(s) U_STRINGIFY(s)
 #define U_MACRO(name,...) \
 / { \
   macros { \
@@ -24,7 +25,13 @@
 #define U_NA &none // present but not available for use
 #define U_NU &none // available but not used
 
-#define U_TAPPING_TERM 200
+#if !defined (U_TAPPING_TERM)
+  #define U_TAPPING_TERM 200
+#endif
+
+#if !defined (HOLD_TAP_FLAVOR)
+  #define HOLD_TAP_FLAVOR "balanced"
+#endif
 
 #include "miryoku_clipboard.h"
 

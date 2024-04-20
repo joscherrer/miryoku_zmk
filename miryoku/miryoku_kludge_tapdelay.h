@@ -14,7 +14,7 @@ U_MACRO(u_tapdelay_tap_##CODE, bindings = <&macro_press &kp CODE>, <&macro_relea
       label = U_STRINGIFY(u_tapdelay_mt_##CODE); \
       #binding-cells = <2>; \
       tapping_term_ms = <U_TAPPING_TERM>; \
-      flavor = "tap-preferred"; \
+      flavor = xstr(HOLD_TAP_FLAVOR); \
       bindings = <&kp>, <&u_tapdelay_tap_##CODE>; \
     }; \
   }; \
@@ -28,7 +28,7 @@ U_MACRO(u_tapdelay_tap_##CODE, bindings = <&macro_press &kp CODE>, <&macro_relea
       label = U_STRINGIFY(u_tapdelay_lt_##CODE); \
       #binding-cells = <2>; \
       tapping_term_ms = <U_TAPPING_TERM>; \
-      flavor = "tap-preferred"; \
+      flavor = xstr(HOLD_TAP_FLAVOR); \
       bindings = <&mo>, <&u_tapdelay_tap_##CODE>; \
     }; \
   }; \
