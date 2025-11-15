@@ -1,0 +1,37 @@
+# regex: N0, N0, (.), (?:N?)(.), N0, N0, (.), (?:N?)(.)\s*# (.), (.)
+# replace: <Multi_key> <u> <0> <0> <\L$1\E> <\L$2\E> <Return> : "$5"\n<Multi_key> <u> <0> <0> <\L$3\E> <\L$4\E> <Return> : "$6"
+
+<Multi_key> <u> <0> <0> <e> <9> <Return> : "é"
+<Multi_key> <u> <0> <0> <c> <9> <Return> : "É"
+<Multi_key> <u> <0> <0> <e> <8> <Return> : "è"
+<Multi_key> <u> <0> <0> <c> <8> <Return> : "È"
+<Multi_key> <u> <0> <0> <f> <9> <Return> : "ù"
+<Multi_key> <u> <0> <0> <d> <9> <Return> : "Ù"
+
+<Multi_key> <u> <0> <0> <e> <7> <Return> : "ç"
+<Multi_key> <u> <0> <0> <c> <7> <Return> : "Ç"
+<Multi_key> <u> <0> <0> <e> <0> <Return> : "à"
+<Multi_key> <u> <0> <0> <c> <0> <Return> : "À"
+<Multi_key> <u> <0> <0> <e> <a> <Return> : "ê"
+<Multi_key> <u> <0> <0> <c> <a> <Return> : "Ê"
+
+
+<Multi_key> <u> <0> <0> <f> <4> <Return> : "ô"
+<Multi_key> <u> <0> <0> <d> <4> <Return> : "Ô"
+<Multi_key> <u> <0> <0> <e> <2> <Return> : "â"
+<Multi_key> <u> <0> <0> <c> <2> <Return> : "Â" 
+
+<Multi_key> <u> <0> <0> <e> <4> <Return> : "ä"
+<Multi_key> <u> <0> <0> <c> <4> <Return> : "Ä" 
+<Multi_key> <u> <0> <0> <e> <e> <Return> : "î"
+<Multi_key> <u> <0> <0> <c> <e> <Return> : "Î"
+<Multi_key> <u> <0> <0> <f> <b> <Return> : "û"
+<Multi_key> <u> <0> <0> <d> <b> <Return> : "Û"
+<Multi_key> <u> <0> <0> <e> <f> <Return> : "ï"
+<Multi_key> <u> <0> <0> <c> <f> <Return> : "Ï"
+<Multi_key> <u> <0> <0> <f> <c> <Return> : "ü"
+<Multi_key> <u> <0> <0> <d> <c> <Return> : "Ü"
+<Multi_key> <u> <0> <0> <e> <b> <Return> : "ë"
+<Multi_key> <u> <0> <0> <c> <b> <Return> : "Ë"
+<Multi_key> <u> <0> <0> <f> <6> <Return> : "ö"
+<Multi_key> <u> <0> <0> <d> <6> <Return> : "Ö"

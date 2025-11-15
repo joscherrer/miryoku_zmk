@@ -170,3 +170,21 @@
     ZMK_UNICODE_PAIR(name ## _lin, &macro_tap &kp LS(LC(U)),  &macro_tap &kp SPACE,    L0, L1, L2, L3, U0, U1, U2, U3) \
     ZMK_UNICODE_PAIR(name ## _win, &macro_tap &kp RALT &kp U, &macro_tap &kp RET,      L0, L1, L2, L3, U0, U1, U2, U3) \
     ZMK_UNICODE_PAIR(name ## _mac, &macro_press &kp LALT,     &macro_release &kp LALT, L0, L1, L2, L3, U0, U1, U2, U3)
+
+#define ALT_MACRO(name, BINDINGS) \
+    / { \
+        macros { \
+            name: name { \
+                compatible = "zmk,behavior-macro"; \
+                wait-ms = <0>; \
+                tap-ms = <0>; \
+                #binding-cells = <0>; \
+                bindings = <&macro_tap &kp RALT>, <BINDINGS>; \
+            }; \
+        }; \
+    };
+
+#define ZMK_ALT_CODES(name, LO, UP) \
+    ALT_MACRO(name ## _lower, LO) \
+    ALT_MACRO(name ## _upper, UP) \
+    UC_MODMORPH(name, &name ## _lower, &name ## _upper)
