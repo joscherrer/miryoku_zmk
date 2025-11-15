@@ -26,7 +26,7 @@ The [[#keyboard-keymaps][keyboard keymaps]] are composed of the config file, a [
 [[#global-shift-functions][global shift functions]],
 [[#key-emulation-combos][key emulation combos]],
 [[#mouse-keys][mouse keys]],
-[[#suspend][suspend]],
+[[#soft-off][soft off]],
 [[#tap-delay][tap delay]],
 and [[#𝑥MK][𝑥MK]].
 Open [[#issues][issues]] are also noted.
@@ -225,7 +225,7 @@ See https://github.com/manna-harbour/miryoku/discussions/81 for available and su
 
 Outboards are files containing out-of-tree board and shield definition metadata.
 
-Files are at [[.github/workflows/outboards]]. Outboards for boards and shields are contained in the corresponding subdirectories. Files are named after the board or shield.
+Files are at [[.github/workflows/outboards]]. Outboards for boards and shields are contained in the corresponding subdirectories. Files are named after the base board or shield name (i.e. without revision or ~_left~ / ~_right~ suffixes).
 
 Outboards contain Bourne shell variable assignments. Supported variables are described below. See the files for samples.
 
@@ -363,6 +363,21 @@ Notes or diagrams are provided below where the selection of keys is not obvious 
 **** 34/ferris
 
 [[#thumb-combos][Thumb combos]] are enabled.
+
+
+**** 36/willis
+
+***** Bruce
+
+~MIRYOKU_MAPPING=2X2U~
+
+Supports Bruce/Le Chiffre 2x2u configuration.
+[[#thumb-combos][Thumb combos]] are enabled.
+
+***** Minidox
+
+Default.
+3x1U thumb keys.
 
 
 **** 38/draculad
@@ -553,41 +568,27 @@ On each hand, combo the primary and secondary thumb keys to emulate the tertiary
 
 *** Mouse Keys
 
-[[https://zmk.dev/docs/behaviors/mouse-emulation][ZMK supports mouse buttons only]].
+[[https://zmk.dev/docs/behaviors/mouse-emulation][ZMK supports mouse keys]].
 
-**** Mouse Keys on Host
+To build, add ~CONFIG_ZMK_POINTING=y~ to the [[#kconfig-configuration][Kconfig configuration]].
 
-Mouse movement requires [[https://en.wikipedia.org/wiki/Mouse_keys][enabling mouse keys on the host]].  Mouse scroll is not supported.
+For [[#workflow-builds][workflow builds]] using the [[#build-inputs][Build Inputs]] workflow, use ~CONFIG_ZMK_POINTING=y~ with the ~kconfig~ option.
 
-- [[https://linuxreviews.org/HOWTO_use_the_numeric_keyboard_keys_as_mouse_in_XOrg][X11]]
-- [[https://support.apple.com/en-au/guide/mac-help/mh27469/mac][Mac]]
-- [[https://support.microsoft.com/en-us/windows/use-mouse-keys-to-move-the-mouse-pointer-9e0c72c8-b882-7918-8e7b-391fd62adf33][Windows]]
-
-
-**** Mousekeys PR
-
-Mouse movement and scroll is supported with https://github.com/caksoylar/zmk/tree/feat/mouse-keys-3.2.
-
-To build, add ~#define MIRYOKU_KLUDGE_MOUSEKEYSPR~ to the [[#config-file][config file]], and switch to or merge the mousekeys branch.
-
-For [[#workflow-builds][workflow builds]] using the [[#build-inputs][Build Inputs]] workflow, use ~#define MIRYOKU_KLUDGE_MOUSEKEYSPR~ with the ~custom_config~ option, and ~caksoylar/zmk/feat/mouse-keys-3.2~ with the ~branches~ option.  Alternatively, use ~zmkfirmware/zmk/main caksoylar/zmk/feat/mouse-keys-3.2~ to attempt an automatic [[#branches][merge]] of the branch into ZMK main.
-
-For workflow builds using [[#build-examples][Build Example]] workflows, see the [[.github/workflows/build-example-mousekeyspr.yml][Build Example mousekeyspr]] workflow.
+For workflow builds using [[#build-examples][Build Example]] workflows, see the [[.github/workflows/build-example-mouse.yml][Build Example with mouse support]] workflow.
 
 For local builds, make the changes locally.
 
+*** Soft Off
 
-*** Suspend
+Support for [[https://zmk.dev/docs/features/soft-off][soft off]] can be enabled.
 
-Support for https://github.com/zmkfirmware/zmk/issues/1292#issuecomment-1264603539 is included using https://github.com/manna-harbour/zmk/tree/suspend-test and https://github.com/manna-harbour/zephyr/tree/v3.0.0+zmk-fixes-suspend-test.
+Soft off takes the place of the [[https://github.com/manna-harbour/miryoku/tree/master/docs/reference#additional-features][boot]] key.
 
-Suspend takes the place of the [[https://github.com/manna-harbour/miryoku/tree/master/docs/reference#additional-features][boot]] key. For split keyboards, suspend the peripheral side then the central side.
+For [[#local-builds][local builds]], add ~#define MIRYOKU_KLUDGE_SOFT_OFF~ to the [[#config-file][config file]] and ~CONFIG_ZMK_PM_SOFT_OFF=y~ to the [[#kconfig-configuration][Kconfig configuration]].
 
-For [[#local-builds][local builds]], add ~#define MIRYOKU_KLUDGE_SUSPEND~ to the [[#config-file][config file]] and switch to or merge https://github.com/manna-harbour/zmk/tree/suspend-test.
+For [[#workflow-builds][workflow builds]] using the [[#build-inputs][Build Inputs]] workflow, use ~#define MIRYOKU_KLUDGE_SOFT_OFF~ with the ~custom_config~ option, and ~CONFIG_ZMK_PM_SOFT_OFF=y~ with the ~kconfig~ option.
 
-For [[#workflow-builds][workflow builds]] using the [[#build-inputs][Build Inputs]] workflow, use ~#define MIRYOKU_KLUDGE_SUSPEND~ with the ~custom_config~ option, and ~manna-harbour/zmk/suspend-test~ with the ~branches~ option.  Alternatively, use ~zmkfirmware/zmk/main manna-harbour/zmk/suspend-test~ to attempt an automatic [[#branches][merge]] of the branch into ZMK main.
-
-For workflow builds using [[#build-examples][Build Example]] workflows, see the [[.github/workflows/build-example-suspend.yml][Build Example suspend]] workflow.
+For workflow builds using [[#build-examples][Build Example]] workflows, see the [[.github/workflows/build-example-soft_off.yml][Build Example soft_off]] workflow.
 
 
 *** Tap Delay
