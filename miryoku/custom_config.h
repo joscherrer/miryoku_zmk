@@ -81,9 +81,9 @@ U_NP,              U_NP,              U_NP,              &kp ESC,           &kp 
 
 #define MIRYOKU_ALTERNATIVES_NAV_VI_CORNE \
 U_BOOT,            &u_to_U_GAME,      &u_to_U_TAP,       &u_to_U_EXTRA,     &u_to_U_BASE,      U_NA,              U_RDO,             U_PST,             U_CPY,             U_CUT,             U_UND,             U_NU,     \
-U_NU,              &kp LGUI,          &kp LALT,          &kp LCTRL,         &kp LSHFT,         U_NA,              &kp LEFT,          &kp DOWN,          &kp UP,            &kp RIGHT,         &u_caps_word,      U_NU,     \
-U_NU,              U_NA,              &kp RALT,          &u_to_U_NUM,       &u_to_U_NAV,       U_NA,              &kp HOME,          &kp PG_DN,         &kp PG_UP,         &kp END,           &kp INS,           U_NU,     \
-&ext_power EP_TOG, U_NP,              U_NP,              U_NA,              U_NA,              U_NA,              &kp RET,           &kp BSPC,          &kp DEL,           U_NP,              U_NP,              U_NP
+&ext_power EP_ON,  &kp LGUI,          &kp LALT,          &kp LCTRL,         &kp LSHFT,         U_NA,              &kp LEFT,          &kp DOWN,          &kp UP,            &kp RIGHT,         &u_caps_word,      U_NU,     \
+&ext_power EP_OFF, U_NA,              &kp RALT,          &u_to_U_NUM,       &u_to_U_NAV,       U_NA,              &kp HOME,          &kp PG_DN,         &kp PG_UP,         &kp END,           &kp INS,           U_NU,     \
+U_NP,              U_NP,              U_NP,              U_NA,              U_NA,              U_NA,              &kp RET,           &kp BSPC,          &kp DEL,           U_NP,              U_NP,              U_NP
 
 #define MIRYOKU_ALTERNATIVES_MOUSE_VI_CORNE \
 U_BOOT,            &u_to_U_GAME,      &u_to_U_TAP,       &u_to_U_EXTRA,     &u_to_U_BASE,      U_NA,              U_RDO,             U_PST,             U_CPY,             U_CUT,             U_UND,             U_NU,     \
@@ -111,8 +111,8 @@ U_NP,              U_NP,              U_NP,              U_NA,              U_NA
 
 #define MIRYOKU_ALTERNATIVES_NUM_CORNE \
 U_NU,              &kp LBKT,          &kp N7,            &kp N8,            &kp N9,            &kp RBKT,          U_NA,              &u_to_U_BASE,      &u_to_U_EXTRA,     &u_to_U_TAP,       U_BOOT,            U_NU,     \
-U_NU,              &kp SEMI,          &kp N4,            &kp N5,            &kp N6,            &kp EQUAL,         U_NA,              &kp LSHFT,         &kp LCTRL,         &kp LALT,          &kp LGUI,          U_NU,     \
-U_NU,              &kp GRAVE,         &kp N1,            &kp N2,            &kp N3,            &kp BSLH,          U_NA,              &u_to_U_NUM,       &u_to_U_NAV,       &kp RALT,          U_NA,              U_NU,     \
+U_NU,              &kp SEMI,          &kp N4,            &kp N5,            &kp N6,            &kp EQUAL,         U_NA,              &kp LSHFT,         &kp LCTRL,         &kp LALT,          &kp LGUI,          &ext_power EP_ON, \
+U_NU,              &kp GRAVE,         &kp N1,            &kp N2,            &kp N3,            &kp BSLH,          U_NA,              &u_to_U_NUM,       &u_to_U_NAV,       &kp RALT,          U_NA,              &ext_power EP_OFF, \
 U_NP,              U_NP,              U_NP,              &kp DOT,           &kp N0,            &kp MINUS,         U_NA,              U_NA,              U_NA,              U_NP,              U_NP,              U_NP
 
 #define MIRYOKU_ALTERNATIVES_SYM_CORNE \
